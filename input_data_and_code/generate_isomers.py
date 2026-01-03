@@ -18,6 +18,6 @@ with open('formulae.txt') as f: # for every active from actives_final.ism, read 
 	for line in f.readlines():
 		line = line.split()
 		if not os.path.isfile('../' + line[1] + '.smi'):
-			os.system('timeout 10m java -jar /home/stefan/MAYGEN/target/MAYGEN-1.8.jar -f ' + line[1] + ' -m -v -t -smi -o ../')
+			os.system('timeout 10m java -jar /home/user/MAYGEN/target/MAYGEN-1.8.jar -f ' + line[1] + ' -m -v -t -smi -o ../') # adjust the path to your MAYGEN installation
 		
 
