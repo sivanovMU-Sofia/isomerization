@@ -14,7 +14,7 @@ num_lines_formulae = sum(1 for _ in open('formulae.txt'))
 if num_lines_actives != num_lines_formulae:
 	print("WARNING!!! DIFFERENT NUMBER OF LINES IN actives_final.ism and formulae.txt IN", os.getcwd(), "!!!")
 	
-with open('formulae.txt') as f: # for every active from actives_final.ism, read its net formula and do a 10-minute MAYGEN multiprocessor (-m) run to generate isomers
+with open('formulae.txt') as f: # for every active from actives_final.ism, read its net formula and do a 10-minute MAYGEN multiprocessor (-m) run to generate isomers. Adjust this, if necessary
 	for line in f.readlines():
 		line = line.split()
 		if not os.path.isfile('../' + line[1] + '.smi'):
