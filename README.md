@@ -26,7 +26,6 @@ Then, run isomer searches. In the code, you can provide SMARTS patterns for mole
 
 ```
 python compare_ligs.py
-
 ```
 
 Finally, compute DUD-E active - DUD-E active, DUD-E decoy - DUD-E decoy, and isomer - isomer Tanimoto similarities. Note the last step can take a lot of RAM. All code herein is provided free of charge and without any warranty as an example; modify according to your needs and resources.
