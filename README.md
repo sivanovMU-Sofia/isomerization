@@ -19,3 +19,25 @@ python ../generate_isomers.py
 cd ..
 done
 ```
+
+Then, run isomer searches. In the code, you can provide SMARTS patterns for molecular features to avoid, and specify acceptable margins for the number of hydrogen bond acceptors (HBA), donors (HBD), and rotors. 
+
+```
+for i in cxcr4 comt fabp4 pur2 glcm sahh pygm hs90a hxk4 ada mcr nram pa2ga fak1 hivint nos1 rock1 grik1 mapk2 def
+do
+cd $i
+python ../compare_ligs.py
+cd ..
+done
+```
+
+Finally, compute DUD-E active - DUD-E active, DUD-E decoy - DUD-E decoy, and isomer - isomer Tanimoto similarities. Note the last step can take quite a bit of RAM. All code herein is provided free of charge and without any warranty as an example; modify according to your needs and resources.
+
+```
+for i in cxcr4 comt fabp4 pur2 glcm sahh pygm hs90a hxk4 ada mcr nram pa2ga fak1 hivint nos1 rock1 grik1 mapk2 def
+do
+cd $i
+python ../compare_actives_dude_decoys_and_isomer_decoys.py
+cd ..
+done
+```
