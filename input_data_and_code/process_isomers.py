@@ -65,7 +65,7 @@ def organize_data_in_data_frame(i, reference_smi, reference_hba, reference_hbd, 
 
     if row % 100_000 == 0:
         print("Processed", row, "molecules, found", str(len(isomers)) + " suitable isomers from strict search and " + str(len(isomers_from_loose_search)), "suitable isomers from loose search for", i, datetime.datetime.now())
-        isomers.to_csv(str(i) + '_isomers.csv', index = False)
+        isomers.to_csv(str(i) + '_isomers.csv', index = False) # save isomers to csv every 100,000 molecules
 
     return temp
     
