@@ -42,19 +42,19 @@ def compare_ligs(folder): # for every target (ada, comt, cxcr4, def, fabp4, fak1
             data.drop_duplicates(subset = 'isomer', inplace = True)
             data.sort_values(by = 'Tanimoto_similarity', ascending = False, inplace = True)
             data.reset_index(inplace = True, drop = True)
-
-        if len(data) < 100:
-            actives.drop(index = i, inplace = True) # drop actives that have less than 100 isomers
-        else:
-            data = data[0:100]
-
+            
+            if len(data) < 100:
+                actives.drop(index = i, inplace = True) # drop actives that have less than 100 isomers
+            else:
+                data = data[0:100]
+                
             data.to_csv(str(i) + '_100_isomers.csv', index = False)
             
             dude_actives_dude_actives_tanimotos = []
-
             dude_decoys_dude_decoys_tanimotos = []
-            
             isomer_decoys_isomer_decoys_tanimotos = []
+        else:
+             actives.drop(index = i, inplace = True)
 
     for active in actives.index: # compute DUD-E active - DUD-E active Tanomotos
             mol = Chem.MolFromSmiles(actives.smiles.loc[active])
